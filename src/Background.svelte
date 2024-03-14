@@ -4,7 +4,7 @@
     export let selectedCountry: string;
     let selectedCountryLink: string = "";
     
-    let additionalSettings: string = "controls=0&autoplay=1&mute=1&start=60&vq=large";
+    let additionalSettings: string = "autohide=1&controls=0&autoplay=1&mute=1&start=60&vq=large&showinfo=0&enablejsapi=1&widgetid=1&rel=0&playsinline=1";
     let staticNoise = true;
     setTimeout(() => {
         staticNoise = false;
@@ -32,11 +32,15 @@
 
 <div class="blockbox"></div>
 
-<iframe width="1920" height="1080" src="{selectedCountryLink + "&amp;" + additionalSettings}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+<div class="video-player">
+    <div class="video-layout">
+        <iframe width="100%" height="100%" src="{selectedCountryLink + "&amp;" + additionalSettings}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+</div>
 <style>
     .staticNoise {
-        width: 100vw;
-        height: 100vh;
+        width: 200vw;
+        height: 200vh;
         background: repeating-radial-gradient(#000 0 0.0001%,#fff 0 0.0002%) 50% 0/2500px 2500px,
     repeating-conic-gradient(#000 0 0.0001%,#fff 0 0.0002%) 60% 60%/2500px 2500px;
         background-blend-mode: difference;
@@ -52,13 +56,24 @@
         user-select: none;
     }
 
-    iframe {
+    .video-player {
         z-index: 9;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
         user-select: none;
+    }
+
+    .video-layout {
+        /* position: absolute; */
+        -moz-transform: scale(1.135);
+        -webkit-transform: scale(1.135);
+        -o-transform: scale(1.135);
+        -ms-transform: scale(1.135);
+        transform: scale(1.135);
+        width: 100vw;
+        height: 100%;
     }
 
     @keyframes b {

@@ -1,7 +1,8 @@
 <script lang="ts">
     import Overlay from "../Overlay.svelte";
     import Background from "../Background.svelte";
-
+    import { GlobeSolid } from 'flowbite-svelte-icons';
+    import { Button } from 'flowbite-svelte';
     let selectedCountry: string = "Austria";
     let selectedMode: string = "Drive";
 
@@ -13,27 +14,27 @@
         selectedMode = event.detail.selectedMode;
     }
 
-    let countryLink = {
-        name: "Italy",
-        videos: [
-            {
-                id: 34999,
-                title: "Driving the Sella Pass, Italy",
-                link: "https://www.youtube.com/embed/M9M1jt6ueok?si=m5z1nkz-BP--IJys",
-                type: "driving"
-            }
-        ]
-    };
+    let hidden1 = true;
 
-    // let vidLink = countryLink.videos[0].link;
 </script>
 <div class="main-container">
-    <Overlay on:countryChange={countryChange} on:modeChange={modeChange} />
+
+    <div class="btn-overlay text-center">
+        <Button on:click={() => (hidden1 = false)}><GlobeSolid /></Button>
+    </div>
+    <Overlay on:countryChange={countryChange} on:modeChange={modeChange} bind:hidden={hidden1} />
     
     <Background {selectedCountry} />
 </div>
 <style>
     .main-container {
         padding: 0;
+    }
+
+    .btn-overlay {
+        z-index: 11;
+        position: absolute;
+        top: 10px;
+        left: 10px;
     }
 </style>

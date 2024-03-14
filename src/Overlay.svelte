@@ -1,5 +1,7 @@
 <script lang="ts">
     import { createEventDispatcher } from "svelte";
+    import { Label, Select, Drawer, Footer, FooterCopyright, FooterLinkGroup, FooterLink, Badge } from 'flowbite-svelte';
+    import { sineIn } from 'svelte/easing';
 
     let countries = [
         "Austria",
@@ -47,41 +49,54 @@
         selectedMode = event.target.value;
         dispatch("modeChange", {selectedMode})
     }
+
+    export let hidden: boolean;
+    let transitionParams = {
+        x: -320,
+        duration: 200,
+        easing: sineIn
+    };
 </script>
-<div class="overlay">
-    <h1>Travel App Settings</h1>
-    <button>Display</button>
 
-    <h2>Select a country!</h2>
-    <select on:change={handleCountryChange}>
-        {#each countries as country}
-            <option value={country}>{country}</option>
-        {/each}
-    </select>
+<Drawer transitionType="fly" {transitionParams} bind:hidden={hidden} id="sidebar1">
+    <div class="text">
+        <h2 class="text-4xl font-extrabold dark:text-white">détendre</h2>
+        <p>unwind and travel at Europe.</p>
+    </div>
 
-    <h2>Select a mode!</h2>
-    <select on:change={handleModeChange}>
-        {#each travelModes as mode}
-            <option value={mode}>{mode}</option>
-        {/each}
-    </select>
-</div>
+    <br>
+
+    <Label class="label">
+        <p class="text-base font-semibold py-1">Country</p>
+        <Select on:change={handleCountryChange} class="select">
+            {#each countries as country}
+                <option value={country}>{country}</option>
+            {/each}
+        </Select>
+    </Label>
+
+    <br>
+
+    <Label class="label">
+        <p class="text-base font-semibold py-1">Mode <Badge color="yellow">Available soon!</Badge></p>
+        <Select on:change={handleModeChange} class="select" disabled>
+            {#each travelModes as mode}
+                <option value={mode}>{mode}</option>
+            {/each}
+        </Select>
+    </Label>
+
+    <Footer>
+        <FooterCopyright href="https://github.com/bxavace" by="bxavace" year={new Date().getFullYear()} />
+        <FooterLinkGroup ulClass="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+          <FooterLink href="/about">About</FooterLink>
+        </FooterLinkGroup>
+      </Footer>
+</Drawer>
+
 <style>
-* {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
 
-.overlay {
-    z-index: 11;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 1rem;
-    backdrop-filter: blur(1px);
+#sidebar1 {
+    z-index: 12;
 }
-
 </style>
