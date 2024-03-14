@@ -61,7 +61,7 @@
 <Drawer transitionType="fly" {transitionParams} bind:hidden={hidden} id="sidebar1">
     <div class="text">
         <h2 class="text-4xl font-extrabold dark:text-white">détendre</h2>
-        <p>unwind and travel at Europe.</p>
+        <p>unwind, travel, escape, sightseeing.</p>
     </div>
 
     <br>
