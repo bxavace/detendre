@@ -4,34 +4,34 @@
     import { sineIn } from 'svelte/easing';
 
     let countries = [
-        "Austria",
-        "Belgium",
-        "Bulgaria",
-        "Croatia",
-        "Cyprus",
-        "Czech Republic",
-        "Denmark",
-        "Estonia",
-        "Finland",
-        "France",
-        "Germany",
-        "Greece",
-        "Hungary",
-        "Ireland",
-        "Italy",
-        "Latvia",
-        "Lithuania",
-        "Luxembourg",
-        "Malta",
-        "Netherlands",
-        "Poland",
-        "Portugal",
-        "Romania",
-        "Slovakia",
-        "Slovenia",
-        "Spain",
-        "Sweden",
-        "United Kingdom"
+        "Austria 🇦🇹",
+        "Belgium 🇧🇪",
+        "Bulgaria 🇧🇬",
+        "Croatia 🇭🇷",
+        "Cyprus 🇨🇾",
+        "Czech Republic 🇨🇿",
+        "Denmark 🇩🇰",
+        "Estonia 🇪🇪",
+        "Finland 🇫🇮",
+        "France 🇫🇷",
+        "Germany 🇩🇪",
+        "Greece 🇬🇷",
+        "Hungary 🇭🇺",
+        "Ireland 🇮🇪",
+        "Italy 🇮🇹",
+        "Latvia 🇱🇻",
+        "Lithuania 🇱🇹",
+        "Luxembourg 🇱🇺",
+        "Malta 🇲🇹",
+        "Netherlands 🇳🇱",
+        "Poland 🇵🇱",
+        "Portugal 🇵🇹",
+        "Romania 🇷🇴",
+        "Slovakia 🇸🇰",
+        "Slovenia 🇸🇮",
+        "Spain 🇪🇸",
+        "Sweden 🇸🇪",
+        "United Kingdom 🇬🇧",
     ];
 
     let travelModes = ["Drive", "Walk"];
@@ -70,7 +70,7 @@
         <p class="text-base font-semibold py-1">Country</p>
         <Select on:change={handleCountryChange} class="select" bind:value={selectedCountry}>
             {#each countries as country}
-                <option value={country}>{country}</option>
+                <option value={country.split(" ")[0]}>{country}</option>
             {/each}
         </Select>
     </Label>
