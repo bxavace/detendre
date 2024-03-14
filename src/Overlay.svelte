@@ -36,7 +36,7 @@
 
     let travelModes = ["Drive", "Walk"];
 
-    let selectedCountry;
+    let selectedCountry: string;
     let selectedMode;
     const dispatch = createEventDispatcher();
 
@@ -68,7 +68,7 @@
 
     <Label class="label">
         <p class="text-base font-semibold py-1">Country</p>
-        <Select on:change={handleCountryChange} class="select">
+        <Select on:change={handleCountryChange} class="select" bind:value={selectedCountry}>
             {#each countries as country}
                 <option value={country}>{country}</option>
             {/each}
