@@ -2,9 +2,10 @@
     import countries from "$lib/list";
 
     export let selectedCountry: string;
+    export let selectedMode: string;
     let selectedCountryLink: string = "";
     
-    let additionalSettings: string = "autohide=1&controls=0&autoplay=1&mute=1&start=60&vq=large&showinfo=0&enablejsapi=1&widgetid=1&rel=0&playsinline=1";
+    let additionalSettings: string = "autohide=1&controls=0&autoplay=1&mute=1&start=100&vq=large&showinfo=0&enablejsapi=1&widgetid=1&rel=0&playsinline=1";
     let staticNoise = true;
     setTimeout(() => {
         staticNoise = false;
@@ -14,18 +15,22 @@
     return new Promise(resolve => setTimeout(resolve, ms));
     }
     
-    async function updateBackground(event: any) {
+    async function updateBackground(selectedCountry: string, selectedMode: string) {
         staticNoise = true;
         for (let country of countries) {
-            if (country.name == event) {
-                selectedCountryLink = country.videos[Math.random() * country.videos.length | 0].link;
+            if (country.name == selectedCountry) {
+                if (selectedMode == "Walk")
+                    selectedCountryLink = country.videos_walk[Math.random() * country.videos_walk.length | 0].link;
+                else if (selectedMode == "Drive") {
+                    selectedCountryLink = country.videos_drive[Math.random() * country.videos_drive.length | 0].link;
+                }
                 await delay(6500);
                 staticNoise = false;
             }
         }
     }
 
-    $: updateBackground(selectedCountry);
+    $: updateBackground(selectedCountry, selectedMode);
 </script>
 
 <div class:staticNoise></div>

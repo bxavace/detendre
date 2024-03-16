@@ -1,265 +1,273 @@
-interface Videos {
+interface VideosDrive {
     link: string,
-    type: string,
+}
+
+interface VideosWalk {
+    link: string,
 }
 
 interface Country {
     name: string,
-    videos: Videos[],
+    videos_drive: VideosDrive[],
+    videos_walk: VideosWalk[]
 }
 
 const countries: Country[] = [
     {
         name: "Austria",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/dd8Mw5Ay4uE?si=0dZuS5c5vvX43sGD",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Belgium",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/8t9VJ3rXbwc?si=XUDyHvrux5Xajwbg",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Bulgaria",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/qNqJVQPJAd8?si=sdE9D6nM6MnSTsaj",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Croatia",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/0oCXSUEl6Fk?si=T47dcewRVqvjHhr4",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Cyprus",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/rufeXCPoCwk?si=vPfo8-AFH3VYfi44",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Czech Republic",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/0nh7zkq9JZ4?si=njTYX8eB-qHssuar",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Denmark",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/XGd7opYnoZ4?si=t7mxLdkmMGlNaVVO",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Estonia",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/zSdRqcYYzR0?si=hNqYRo1SvRSRG_uf",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Finland",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/X_Gdgh07k8E?si=SifGhgTybdUUk4w4",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "France",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/Ln40VRxItT4?si=Q1XMEZb6q9EVCgV2",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Germany",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/2054gi9TzcA?si=ybGI2iQzjKDrjNrY",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Greece",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/sIRpOIg4-vw?si=R3LvF-W8EBuCbZbi",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Hungary",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/IH4wGT1vjp8?si=e7Z-hdpkWlCORhnb",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Ireland",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/L0F9qzALGcY?si=qHM6OLedOCeMyEKI",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Italy",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/M9M1jt6ueok?si=m5z1nkz-BP--IJys",
-                type: "driving"
+            }
+        ],
+        videos_walk: [
+            {
+                link: "https://www.youtube.com/embed/KcYDl5mB9rs?si=639KzjD4DYTK84Vq",
             }
         ]
     },
     {
         name: "Latvia",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/3QYFbHhXBCk?si=DuN11gQnjEJ06YEf",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Lithuania",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/LJeQH3rvWdY?si=Q4ioJXp2k9KErAfw",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Luxembourg",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/kXKC_nAKb8s?si=7JT96H4xGOiBF43Y",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Malta",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/6yu-ur02Oto?si=_Klj8mUCqd5cWBfK",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Netherlands",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/ha6MiYRMbhs?si=TfcmHJwMwFNgnCD5",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Poland",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/dEJhCItMi58?si=fXm0MAzSfOb9H4XQ",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Portugal",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/hFYNJNzOM9E?si=HL4rK13i2bEZarrc",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Romania",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/Fgdr2xEDuog?si=6xf_stXnpuAIsEED",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Slovakia",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/9xk7HR83oaE?si=OXKtikbSNXoFVVid",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Slovenia",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/9qpoAW1bceg?si=IFvae3mQRaqzqxvm",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Spain",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/rxeQiSezhyI?si=fSrPEqTqE10hsAaz",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "Sweden",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/yV0qD9JltXw?si=IuxRKmIsNNF_45yq",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     },
     {
         name: "United Kingdom",
-        videos: [
+        videos_drive: [
             {
                 link: "https://www.youtube.com/embed/zBteu7mmQ3s?si=0qsOcjn36MgNq-gI",
-                type: "driving"
             }
-        ]
+        ],
+        videos_walk: []
     }
 ];
 

@@ -24,7 +24,7 @@
     </div>
     <Overlay on:countryChange={countryChange} on:modeChange={modeChange} bind:hidden={hidden1} />
     
-    <Background {selectedCountry} />
+    <Background {selectedCountry}  {selectedMode} />
 </div>
 <style>
     .main-container {

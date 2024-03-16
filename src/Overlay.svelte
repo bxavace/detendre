@@ -37,7 +37,7 @@
     let travelModes = ["Drive", "Walk"];
 
     let selectedCountry: string;
-    let selectedMode;
+    let selectedMode: string;
     const dispatch = createEventDispatcher();
 
     function handleCountryChange(event: any) {
@@ -78,8 +78,8 @@
     <br>
 
     <Label class="label">
-        <p class="text-base font-semibold py-1">Mode <Badge color="yellow">Available soon!</Badge></p>
-        <Select on:change={handleModeChange} class="select" disabled>
+        <p class="text-base font-semibold py-1">Mode</p>
+        <Select on:change={handleModeChange} class="select" bind:value={selectedMode}>
             {#each travelModes as mode}
                 <option value={mode}>{mode}</option>
             {/each}
