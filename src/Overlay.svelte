@@ -78,7 +78,7 @@
     <br>
 
     <Label class="label">
-        <p class="text-base font-semibold py-1">Mode</p>
+        <p class="text-base font-semibold py-1 my-auto">Mode <Badge color="indigo">New</Badge></p>
         <Select on:change={handleModeChange} class="select" bind:value={selectedMode}>
             {#each travelModes as mode}
                 <option value={mode}>{mode}</option>
